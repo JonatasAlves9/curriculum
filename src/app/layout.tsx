@@ -1,6 +1,8 @@
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import "./globals.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faUser, faFileAlt, faHandshake, faFolderOpen, faSun } from '@fortawesome/free-regular-svg-icons'
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -13,27 +15,27 @@ const itensMenu = [
     {
         id: 1,
         label: 'ABOUT',
-        icon: '',
+        icon: faUser,
     },
     {
         id: 2,
         label: 'RESUME',
-        icon: '',
+        icon: faFileAlt,
     },
     {
         id: 3,
         label: 'PROJECTS',
-        icon: '',
+        icon: faHandshake,
     },
     {
         id: 4,
         label: 'ARTICLES',
-        icon: '',
+        icon: faFolderOpen,
     },
     {
         id: 5,
         label: 'CONTACT',
-        icon: '',
+        icon: faEnvelope,
     }
 ];
 
@@ -48,26 +50,39 @@ export default function RootLayout({children}: Readonly<{
             <div className="container flex h-full items-center w-fit">
                 {/*Menu*/}
                 <div
-                    className={"h-3/4 rounded-full transform skew-y-3 -ml-5 z-40"}>
-                    <div
-                        className={"w-full p-4 border-2 border-blue-400 h-full rounded-3xl absolute -left-3 top-3 z-0 transform -skew-y-3"}/>
-                    <div
-                        className={"bg-black border-2 border-gray-600 bg-opacity-60 h-full rounded-full backdrop-blur-md z-0 p-3"}>
+                    className={"h-3/4 rounded-full transform rotate-y-3d -ml-5 z-40"}>
+                    <div className={"w-full p-4 border border-blue-400 h-full rounded-3xl absolute -left-3 top-3 z-0 transform -skew-y-3"}/>
 
+                    <div
+                        className={"bg-black border border-gray-600 bg-opacity-60 h-full rounded-full backdrop-blur-md z-0 grid w-fit "}>
+                        <div className={"flex justify-center"}>
+                            <FontAwesomeIcon icon={faEnvelope} width={20}/>
+                        </div>
+                        <div className={"gap-10 "}>
                         {
                             itensMenu.map((item) => (
-                                <p key={item.id}>
-                                    {item.label}
-                                </p>
+                                <div key={item.id} className={"p-2 px-4 border-b border-gray-600"}>
+                                    <div key={item.id} className={"flex justify-center mb-2"}>
+                                        <FontAwesomeIcon icon={item.icon} width={15}/>
+                                    </div>
+                                    <div key={item.id} className={"flex justify-center"}>
+                                        <p className={"text-xs"}>{item.label}</p>
+                                    </div>
+
+                                </div>
                             ))
                         }
+                        </div>
+                        <div className={"flex justify-center"}>
+                            <FontAwesomeIcon icon={faSun} width={20}/>
+                        </div>
                     </div>
                 </div>
                 {/*Card Imagem*/}
                 <div
-                    className={"bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 h-full w-96 rounded-3xl rotate-y-3d -ml-8"}></div>
+                    className={"bg-image-card bg-cover bg-center h-full w-96 rounded-3xl rotate-y-3d card-image -ml-8"}></div>
             </div>
-            <div className={"border-2 bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-700 rounded-3xl border-gray-600 p-3 w-full"}>
+            <div className={"border bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-700 rounded-3xl border-gray-600 p-3 w-full"}>
                 {children}
             </div>
         </div>

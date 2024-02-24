@@ -33,5 +33,10 @@ body {
 }
 
 .rotate-y-3d {
-  transform: perspective(1000px) rotateY(6deg);
+  transform: perspective(1000px) rotateY(13deg);
+}
+
+.card-image {
+  margin-right: -20px;
+  width: 500px;
 }
