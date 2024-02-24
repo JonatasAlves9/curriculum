@@ -31,3 +31,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.rotate-y-3d {
+  transform: perspective(1000px) rotateY(6deg);
+}
