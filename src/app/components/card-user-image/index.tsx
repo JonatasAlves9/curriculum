@@ -31,7 +31,7 @@ export const CardUserImage = () => {
             className={"bg-image-card bg-cover bg-center rounded-3xl xl:rotate-y-3d w-full xl:-ml-8 flex items-end h-[700px] xl:h-full"}>
 
             {/*Bottom content*/}
-            <div className={"w-full h-1/3 backdrop-blur-md grid rounded-b-3xl"}
+            <div className={"w-full h-1/3 backdrop-blur-md grid rounded-b-3xl  -rotate-z-20"}
                  style={{background: 'linear-gradient(transparent,rgba(0, 0, 0, 0.6))'}}>
                 <div className={"text-center p-3 mt-3"}>
                     <h1 className={"text-3xl font-bold"}>Jônatas Alves</h1>

@@ -184,7 +184,7 @@ export default function Page() {
                     ))}
                 </div>
             </Section.Body>
-            <Section.Header title={"Meus serviços"}/>
+            <Section.Header title={"Testimonials"}/>
 
         </>
     )
