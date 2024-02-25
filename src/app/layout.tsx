@@ -1,10 +1,11 @@
 import type {Metadata} from "next";
-import {Inter} from "next/font/google";
+import {Roboto} from "next/font/google";
 import "./globals.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faUser, faFileAlt, faHandshake, faFolderOpen, faSun } from '@fortawesome/free-regular-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faEnvelope, faUser, faFileAlt, faHandshake, faFolderOpen, faSun} from '@fortawesome/free-regular-svg-icons'
+import {CardUserImage} from "@/app/components/card-user-image";
 
-const inter = Inter({subsets: ["latin"]});
+const inter = Roboto({subsets: ["latin"], weight: "500"});
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -51,7 +52,8 @@ export default function RootLayout({children}: Readonly<{
                 {/*Menu*/}
                 <div
                     className={"h-3/4 rounded-full transform rotate-y-3d -ml-5 z-40"}>
-                    <div className={"w-full p-4 border border-blue-400 h-full rounded-3xl absolute -left-3 top-3 z-0 transform -skew-y-3"}/>
+                    <div
+                        className={"w-full p-4 border border-blue-400 h-full rounded-3xl absolute -left-3 top-3 z-0 transform -skew-y-3"}/>
 
                     <div
                         className={"bg-black border border-gray-600 bg-opacity-60 h-full rounded-full backdrop-blur-md z-0 grid w-fit "}>
@@ -59,19 +61,18 @@ export default function RootLayout({children}: Readonly<{
                             <FontAwesomeIcon icon={faEnvelope} width={20}/>
                         </div>
                         <div className={"gap-10 "}>
-                        {
-                            itensMenu.map((item) => (
-                                <div key={item.id} className={"p-2 px-4 border-b border-gray-600"}>
-                                    <div key={item.id} className={"flex justify-center mb-2"}>
-                                        <FontAwesomeIcon icon={item.icon} width={15}/>
+                            {
+                                itensMenu.map((item) => (
+                                    <div key={item.id} className={"p-2 px-4 border-b border-gray-600"}>
+                                        <div className={"flex justify-center mb-2"}>
+                                            <FontAwesomeIcon icon={item.icon} width={15}/>
+                                        </div>
+                                        <div className={"flex justify-center"}>
+                                            <p className={"text-xs"}>{item.label}</p>
+                                        </div>
                                     </div>
-                                    <div key={item.id} className={"flex justify-center"}>
-                                        <p className={"text-xs"}>{item.label}</p>
-                                    </div>
-
-                                </div>
-                            ))
-                        }
+                                ))
+                            }
                         </div>
                         <div className={"flex justify-center"}>
                             <FontAwesomeIcon icon={faSun} width={20}/>
@@ -79,10 +80,10 @@ export default function RootLayout({children}: Readonly<{
                     </div>
                 </div>
                 {/*Card Imagem*/}
-                <div
-                    className={"bg-image-card bg-cover bg-center h-full w-96 rounded-3xl rotate-y-3d card-image -ml-8"}></div>
+                <CardUserImage/>
             </div>
-            <div className={"border bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-700 rounded-3xl border-gray-600 p-3 w-full"}>
+            <div
+                className={"border bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-700 rounded-3xl border-gray-600 p-3 w-full"}>
                 {children}
             </div>
         </div>
