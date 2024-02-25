@@ -3,9 +3,11 @@
 import {Section} from "@/app/components/section";
 import {useState} from "react";
 
-import { FaReact, FaAws, FaNodeJs, FaGithub, FaDatabase, FaJsSquare } from 'react-icons/fa';
-import { SiTypescript, SiDotnet, SiCsharp, SiKubernetes } from 'react-icons/si';
-import { AiFillAmazonCircle } from 'react-icons/ai';
+import {FaReact, FaAws, FaNodeJs, FaGithub, FaDatabase, FaJsSquare, FaAppStore} from 'react-icons/fa';
+import {SiTypescript, SiDotnet, SiCsharp, SiKubernetes} from 'react-icons/si';
+import {AiFillAmazonCircle} from 'react-icons/ai';
+import {CardIcon} from "@/app/components/card-icon";
+
 export default function Page() {
     const [popoverState, setPopoverState] = useState<{ [key: number]: boolean }>({});
 
@@ -76,6 +78,29 @@ export default function Page() {
         },
     ];
 
+    const data = [
+        {
+            title: "App Developement",
+            description: "End-to-end organization, ui/ux design, optimization, and maintenance of your mobile app project.",
+            Icon: FaAppStore // Substitua IconType1 pelo tipo de ícone que você está usando
+        },
+        {
+            title: "Data Scientist\n",
+            description: "Great marketing campaigns, improve customer service, better business decisions and effective strategies.",
+            Icon: SiKubernetes // Substitua IconType2 pelo tipo de ícone que você está usando
+        },
+        {
+            title: "App Prototyping",
+            description: "We build a prototype of application concept in record time to validate assumptions, figure what works.",
+            Icon: SiKubernetes // Substitua IconType3 pelo tipo de ícone que você está usando
+        },
+        {
+            title: "Project Management",
+            description: "Planning, organizing and managing project activities required to complete an individual project.",
+            Icon: SiKubernetes // Substitua IconType4 pelo tipo de ícone que você está usando
+        }
+    ];
+
     return (
         <>
             <Section.Header title={"Sobre mim"}/>
@@ -141,6 +166,26 @@ export default function Page() {
                 </div>
             </Section.Body>
             <Section.Header title={"Meus serviços"}/>
+            <Section.Body>
+                <div className={"grid grid-cols-2"}>
+                    {data.map((item, index) => (
+                        <div
+                            key={index}
+                            className={`p-4 ${
+                                index === data.length - 1 ? 'border-gray-700 border-b' : 'border border-gray-700 border-t-0 border-l border-r-0 '
+                            } ${
+                                index === 1 || index === 3 ? 'border-r-0 border-l' : ''
+                            } ${
+                                index === 2 || index === 3 ? 'border-t-0' : ''
+                            }`}
+                        >
+                            <CardIcon Icon={item.Icon} title={item.title} description={item.description}/>
+                        </div>
+                    ))}
+                </div>
+            </Section.Body>
+            <Section.Header title={"Meus serviços"}/>
+
         </>
     )
 }

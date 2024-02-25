@@ -1,12 +1,12 @@
 import React from "react";
 
-interface IProps {
+interface IProps extends React.HTMLAttributes<HTMLDivElement>{
     children: React.JSX.Element
 }
 
-export const Body = ({children}: IProps) => {
+export const Body = ({children, ...rest}: IProps) => {
     return (
-        <div >
+        <div {...rest} >
             {children}
         </div>
     )

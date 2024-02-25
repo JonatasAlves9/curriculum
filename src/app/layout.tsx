@@ -38,7 +38,7 @@ export default function RootLayout({children}: Readonly<{
                     <CardUserImage/>
                 </div>
                 <div
-                    className={"border bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-700 rounded-3xl border-gray-600 xl:overflow-scroll"}>
+                    className={"border bg-gray-900 bg-opacity-90 rounded-3xl border-gray-600 xl:overflow-scroll backdrop-blur-sm"}>
                     {children}
                 </div>
             </div>
