@@ -28,9 +28,7 @@ export const CardUserImage = () => {
     ]
     return (
         <div
-            className={"bg-image-card bg-cover bg-center rounded-3xl rotate-y-3d w-full sm:-ml-8 flex items-end "} style={{
-                height: 750
-        }}>
+            className={"bg-image-card bg-cover bg-center rounded-3xl xl:rotate-y-3d w-full xl:-ml-8 flex items-end h-[700px] xl:h-full"}>
 
             {/*Bottom content*/}
             <div className={"w-full h-1/3 backdrop-blur-md grid rounded-b-3xl"}

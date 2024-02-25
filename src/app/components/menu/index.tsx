@@ -33,7 +33,7 @@ export const Menu = () => {
     ];
     return (
         <div
-            className={"h-3/4 rounded-full transform rotate-y-3d -ml-5 z-40 "}>
+            className={"h-3/4 rounded-full transform rotate-y-3d -ml-5 z-40 hidden xl:grid "}>
             <div
                 className={"w-full p-4 border border-blue-400 h-full rounded-3xl absolute -left-3 top-3 z-0 transform -skew-y-3"}/>
             <div
