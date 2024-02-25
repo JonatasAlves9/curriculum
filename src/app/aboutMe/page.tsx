@@ -7,6 +7,7 @@ import {FaReact, FaAws, FaNodeJs, FaGithub, FaDatabase, FaJsSquare, FaAppStore} 
 import {SiTypescript, SiDotnet, SiCsharp, SiKubernetes} from 'react-icons/si';
 import {AiFillAmazonCircle} from 'react-icons/ai';
 import {CardIcon} from "@/app/components/card-icon";
+import {CardTestimonials} from "@/app/components/card-testimonials";
 
 export default function Page() {
     const [popoverState, setPopoverState] = useState<{ [key: number]: boolean }>({});
@@ -185,7 +186,35 @@ export default function Page() {
                 </div>
             </Section.Body>
             <Section.Header title={"Testimonials"}/>
+            <Section.Body>
+                <div className={"flex gap-3 p-3 overflow-x-auto w-screen xl:w-full"} style={{ userSelect: 'none', cursor: 'grab' }}>
+                    <CardTestimonials
+                        person={{
+                            name: 'Jônatas Alves',
+                            description: 'Arquiteto de software',
+                            avatar: 'https://github.com/JonatasAlves9.png'
+                        }}
+                        testimonial={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod enim vel augue accumsan, sit amet facilisis ligula condimentum."}/>
 
+                    <CardTestimonials
+                        person={{
+                            name: 'Jônatas Alves',
+                            description: 'Arquiteto de software',
+                            avatar: 'https://github.com/JonatasAlves9.png'
+                        }}
+                        testimonial={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod enim vel augue accumsan, sit amet facilisis ligula condimentum."}
+                    />
+                    <CardTestimonials
+                        person={{
+                            name: 'Jônatas Alves',
+                            description: 'Arquiteto de software',
+                            avatar: 'https://github.com/JonatasAlves9.png'
+                        }}
+                        testimonial={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod enim vel augue accumsan, sit amet facilisis ligula condimentum."}
+                    />
+                </div>
+            </Section.Body>
+            <Section.Header title={"Testimonials"}/>
         </>
     )
 }
