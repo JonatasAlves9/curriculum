@@ -39,9 +39,9 @@ export const CardUserImage = () => {
                     <div className={"justify-center flex gap-3 mt-2"}>
                         {
                             medias.map((item) => (
-                                <div key={item.id} >
-                                        <item.Icon className={"text-2xl hover:text-blue-500 hover:cursor-pointer"}/>
-                                </div>
+                                <a key={item.id} >
+                                        <item.Icon className={"text-2xl hover:text-blue-500"}/>
+                                </a>
                             ))
                         }
                     </div>

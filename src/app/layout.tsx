@@ -4,6 +4,9 @@ import "./globals.css";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faEnvelope, faUser, faFileAlt, faHandshake, faFolderOpen, faSun} from '@fortawesome/free-regular-svg-icons'
 import {CardUserImage} from "@/app/components/card-user-image";
+import React from "react";
+import AnimatedCursor from "react-animated-cursor";
+
 
 const inter = Roboto({subsets: ["latin"], weight: "500"});
 
@@ -43,10 +46,42 @@ const itensMenu = [
 export default function RootLayout({children}: Readonly<{
     children: React.ReactNode;
 }>) {
+
     return (
         <html lang="en">
         <body
             className={`${inter.className} bg-background-texture flex h-screen justify-center items-center`}>
+        <AnimatedCursor innerSize={10}
+                        outerSize={80}
+                        color='193, 11, 111'
+                        outerAlpha={0.2}
+                        innerScale={0.7}
+                        outerScale={2}
+                        showSystemCursor={false}
+                        clickables={[
+                            'a',
+                            'input[type="text"]',
+                            'input[type="email"]',
+                            'input[type="number"]',
+                            'input[type="submit"]',
+                            'input[type="image"]',
+                            'label[for]',
+                            'select',
+                            'textarea',
+                            'button',
+                            '.link',
+                            {
+                                target: '.custom',
+                                outerScale: 3,
+                                innerSize: 3,
+                                outerSize: 3,
+                                innerScale: 3,
+                            }
+                        ]}/>
+        <div id="cursor">
+            <div id="cursor-outer"></div>
+            <div id="cursor-inner"></div>
+        </div>
         <div className="container flex mx-auto my-auto h-3/4">
             <div className="container flex h-full items-center w-fit">
                 {/*Menu*/}
