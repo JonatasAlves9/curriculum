@@ -36,7 +36,6 @@ export const Menu = () => {
             className={"h-3/4 rounded-full transform rotate-y-3d -ml-5 z-40"}>
             <div
                 className={"w-full p-4 border border-blue-400 h-full rounded-3xl absolute -left-3 top-3 z-0 transform -skew-y-3"}/>
-
             <div
                 className={"bg-black border border-gray-600 bg-opacity-60 h-full rounded-full backdrop-blur-md z-0 grid w-fit "}>
                 <div className={"flex justify-center items-center"}>
