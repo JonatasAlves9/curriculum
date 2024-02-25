@@ -1,5 +1,5 @@
 import type {Metadata} from "next";
-import {Kdam_Thmor_Pro} from "next/font/google";
+import {Quicksand} from "next/font/google";
 import "./globals.css";
 import {CardUserImage} from "@/app/components/card-user-image";
 import React from "react";
@@ -7,7 +7,7 @@ import {AnimatedCursor} from "@/app/components/animated-cursor";
 import {Menu} from "@/app/components/menu";
 
 
-const inter = Kdam_Thmor_Pro({weight: "400", subsets: ["latin"]});
+const inter = Quicksand({subsets: ["latin"]});
 
 export const metadata: Metadata = {
     title: "Create Next App",
