@@ -28,17 +28,18 @@ export const CardUserImage = () => {
     ]
     return (
         <div
-            className={"bg-image-card bg-cover bg-center h-full w-96 rounded-3xl rotate-y-3d card-image -ml-8 flex items-end "}>
+            className={"bg-image-card bg-cover bg-center rounded-3xl rotate-y-3d w-full sm:-ml-8 flex items-end "} style={{
+                height: 750
+        }}>
 
             {/*Bottom content*/}
-            <div className={"w-full h-1/3 backdrop-blur-md grid rounded-b-3xl "}
+            <div className={"w-full h-1/3 backdrop-blur-md grid rounded-b-3xl"}
                  style={{background: 'linear-gradient(transparent,rgba(0, 0, 0, 0.6))'}}>
                 <div className={"text-center p-3 mt-3"}>
                     <h1 className={"text-3xl font-bold"}>Jônatas Alves</h1>
                     <h1 className={"text-md text-blue-600 font-medium"}>Arquiteto de Software</h1>
-                    <FaLinkedin width={20} height={20}/>
 
-                    <div className={"justify-center flex gap-3 mt-2"}>
+                    <div className={"justify-center flex gap-3 mt-4"}>
                         {
                             medias.map((item) => (
                                 <a key={item.id}>
@@ -47,6 +48,7 @@ export const CardUserImage = () => {
                             ))
                         }
                     </div>
+
                 </div>
                 <div className={"flex w-full justify-between border-t  border-gray-600"}>
                     <button

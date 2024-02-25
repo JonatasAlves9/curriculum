@@ -4,10 +4,10 @@ import {Section} from "@/app/components/section";
 import {useState} from "react";
 
 import { FaReact, FaAws, FaNodeJs, FaGithub, FaDatabase, FaJsSquare } from 'react-icons/fa';
-import { SiTypescript, SiDotnet, SiCsharp } from 'react-icons/si';
+import { SiTypescript, SiDotnet, SiCsharp, SiKubernetes } from 'react-icons/si';
 import { AiFillAmazonCircle } from 'react-icons/ai';
 export default function Page() {
-    const [popoverState, setPopoverState] = useState({});
+    const [popoverState, setPopoverState] = useState<{ [key: number]: boolean }>({});
 
     const handleMouseEnter = (id: number) => {
         setPopoverState((prevState) => ({
@@ -69,14 +69,19 @@ export default function Page() {
             label: 'JavaScript',
             Icon: FaJsSquare,
         },
+        {
+            id: 10,
+            label: 'Kubernetes',
+            Icon: SiKubernetes,
+        },
     ];
 
     return (
         <>
             <Section.Header title={"Sobre mim"}/>
             <Section.Body>
-                <div className={"flex justify-between gap-3"}>
-                    <div className={"p-6 w-full"}>
+                <div className={"grid xl:flex justify-between gap-3"}>
+                    <div className={"p-6 w-full "}>
                         <p className={"text-gray-400 font-normal text-pretty"}>Hey, there 👋🏻 hi Im Benjamin, a Software
                             developer and Data scientist with over 8+ years of
                             experience, specialising in Java and React. Also I proficient at using tools and programming
@@ -108,7 +113,7 @@ export default function Page() {
                             <div className="bg-blue-400 p-1 rounded px-2 text-gray-800 text-xs h-fit">
                                 Skills:
                             </div>
-                            <div className="flex flex-wrap gap-2 w-2/4">
+                            <div className="flex flex-wrap gap-2 w-2/4 justify-end">
                                 {skills.map((item) => (
                                     <div
                                         key={item.id}

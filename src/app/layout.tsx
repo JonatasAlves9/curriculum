@@ -21,22 +21,26 @@ export default function RootLayout({children}: Readonly<{
 
     return (
         <html lang="en">
-        <body className={`${inter.className} bg-background-texture flex h-screen justify-center items-center`}>
+        <body
+            className={`${inter.className} bg-background-texture h-screen`}>
         <AnimatedCursor/>
-        <div id="cursor">
-            <div id="cursor-outer"></div>
-            <div id="cursor-inner"></div>
-        </div>
-        <div className="container flex mx-auto my-auto h-3/4">
-            <div className="container flex h-full items-center w-fit">
-                {/*Menu*/}
-                <Menu/>
-                {/*Card Imagem*/}
-                <CardUserImage/>
+
+        <div className={"flex h-full justify-center items-center overflow-scroll"}>
+            <div id="cursor">
+                <div id="cursor-outer"></div>
+                <div id="cursor-inner"></div>
             </div>
-            <div
-                className={"border bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-700 rounded-3xl border-gray-600 w-full"}>
-                {children}
+            <div className="container grid mx-auto my-auto md:h-full xl:h-3/4 xl:flex gap-3 ">
+                <div className="flex items-center w-full h-full">
+                    {/*Menu*/}
+                    <Menu/>
+                    {/*Card Imagem*/}
+                    <CardUserImage/>
+                </div>
+                <div
+                    className={"border bg-gradient-to-tr from-gray-950 via-gray-900 to-gray-700 rounded-3xl border-gray-600 xl:overflow-scroll"}>
+                    {children}
+                </div>
             </div>
         </div>
         </body>
