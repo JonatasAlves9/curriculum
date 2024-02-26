@@ -25,7 +25,7 @@ export default function RootLayout({children}: Readonly<{
             className={`${inter.className} bg-background-texture h-screen`}>
         <AnimatedCursor/>
 
-        <div className={"flex h-full justify-center items-center overflow-scroll"}>
+        <div className={"flex h-full justify-center items-center overflow-auto"}>
             <div id="cursor">
                 <div id="cursor-outer"></div>
                 <div id="cursor-inner"></div>
@@ -38,7 +38,7 @@ export default function RootLayout({children}: Readonly<{
                     <CardUserImage/>
                 </div>
                 <div
-                    className={"border bg-gray-900 bg-opacity-90 rounded-3xl border-gray-600 xl:overflow-scroll backdrop-blur-sm"}>
+                    className={"border bg-gray-900 bg-opacity-90 rounded-3xl border-gray-600 xl:overflow-scroll backdrop-blur-sm  scrollable-container"}>
                     {children}
                 </div>
             </div>

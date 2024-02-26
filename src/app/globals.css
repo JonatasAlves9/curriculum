@@ -16,14 +16,24 @@
   }
 }
 
+.scrollable-container::-webkit-scrollbar {
+  display: none; /* Para navegadores baseados em WebKit (Chrome, Safari, Edge) */
+}
+
+.scrollable-container {
+  -ms-overflow-style: none; /* Para Internet Explorer e Edge */
+  scrollbar-width: none; /* Para Firefox */
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+          to bottom,
+          transparent,
+          rgb(var(--background-end-rgb))
+  )
+  rgb(var(--background-start-rgb));
+  overflow: hidden;
 }
 
 @layer utilities {

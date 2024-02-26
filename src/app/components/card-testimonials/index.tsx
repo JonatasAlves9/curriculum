@@ -12,7 +12,7 @@ interface IProps {
 
 export const CardTestimonials = ({...props}: IProps) => {
     return (
-        <div className={"p-4 border-gray-700 border rounded-3xl bg-white bg-opacity-5 min-w-[400px] max-w-[400px] relative mt-5"}>
+        <div className={"p-4 border-gray-700 border rounded-3xl bg-white bg-opacity-5 sm:w-full lg:w-full relative mt-5"}>
             <img className={"rounded-full absolute w-[60px] h-[60px] -top-5 right-5"} src={props.person.avatar}/>
 
             <div>
