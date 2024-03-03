@@ -9,6 +9,7 @@ import {AiFillAmazonCircle} from 'react-icons/ai';
 import {CardIcon} from "@/app/components/card-icon";
 import {CardTestimonials} from "@/app/components/card-testimonials";
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious,} from "@/components/ui/carousel"
+import {CardFunFact} from "@/app/components/card-fun-fact";
 
 export default function Page() {
     const [popoverState, setPopoverState] = useState<{ [key: number]: boolean }>({});
@@ -188,32 +189,6 @@ export default function Page() {
             </Section.Body>
             <Section.Header title={"Testimonials"}/>
             <Section.Body>
-                {/*<div className={"flex gap-3 p-3 overflow-x-auto w-screen xl:w-full"} style={{ userSelect: 'none', cursor: 'grab' }}>*/}
-                {/*    <CardTestimonials*/}
-                {/*        person={{*/}
-                {/*            name: 'Jônatas Alves',*/}
-                {/*            description: 'Arquiteto de software',*/}
-                {/*            avatar: 'https://github.com/JonatasAlves9.png'*/}
-                {/*        }}*/}
-                {/*        testimonial={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod enim vel augue accumsan, sit amet facilisis ligula condimentum."}/>*/}
-
-                {/*    <CardTestimonials*/}
-                {/*        person={{*/}
-                {/*            name: 'Jônatas Alves',*/}
-                {/*            description: 'Arquiteto de software',*/}
-                {/*            avatar: 'https://github.com/JonatasAlves9.png'*/}
-                {/*        }}*/}
-                {/*        testimonial={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod enim vel augue accumsan, sit amet facilisis ligula condimentum."}*/}
-                {/*    />*/}
-                {/*    <CardTestimonials*/}
-                {/*        person={{*/}
-                {/*            name: 'Jônatas Alves',*/}
-                {/*            description: 'Arquiteto de software',*/}
-                {/*            avatar: 'https://github.com/JonatasAlves9.png'*/}
-                {/*        }}*/}
-                {/*        testimonial={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod enim vel augue accumsan, sit amet facilisis ligula condimentum."}*/}
-                {/*    />*/}
-                {/*</div>*/}
                 <Carousel className={"lg:p-5"}>
                     <CarouselContent>
                         <CarouselItem className={"lg:basis-1/2"}>
@@ -226,7 +201,7 @@ export default function Page() {
                                 testimonial={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod enim vel augue accumsan, sit amet facilisis ligula condimentum."}
                             />
                         </CarouselItem>
-                        <CarouselItem  className={"lg:basis-1/2"}> <CardTestimonials
+                        <CarouselItem className={"lg:basis-1/2"}> <CardTestimonials
                             person={{
                                 name: 'Jônatas Alves',
                                 description: 'Arquiteto de software',
@@ -234,7 +209,7 @@ export default function Page() {
                             }}
                             testimonial={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod enim vel augue accumsan, sit amet facilisis ligula condimentum."}
                         /></CarouselItem>
-                        <CarouselItem  className={"lg:basis-1/2"}>
+                        <CarouselItem className={"lg:basis-1/2"}>
                             <CardTestimonials
                                 person={{
                                     name: 'Jônatas Alves',
@@ -244,11 +219,17 @@ export default function Page() {
                                 testimonial={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod enim vel augue accumsan, sit amet facilisis ligula condimentum."}
                             /></CarouselItem>
                     </CarouselContent>
-                    {/*<CarouselPrevious/>*/}
-                    {/*<CarouselNext/>*/}
                 </Carousel>
             </Section.Body>
-            <Section.Header title={"Testimonials"}/>
+            <Section.Header title={"Fun Facts"}/>
+            <Section.Body>
+                <div className={"flex"}>
+                    <CardFunFact label={"100+ Albumes Listened"} Icon={FaReact}/>
+                    <CardFunFact label={"100+ Albumes Listened"} Icon={FaReact}/>
+                    <CardFunFact label={"100+ Albumes Listened"} Icon={FaReact}/>
+                    <CardFunFact label={"100+ Albumes Listened"} Icon={FaReact}/>
+                </div>
+            </Section.Body>
         </>
     )
 }
